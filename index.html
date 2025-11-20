@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    
+
+    <title>Frontend Mentor | Notifications page</title>
+  </head>
+  <style>
+:root {
+  --red: hsl(1, 90%, 64%);
+  --blue: hsl(219, 85%, 26%);
+  --white: hsl(0, 0%, 100%);
+  --very-light-grayish-blue: hsl(210, 60%, 98%);
+  --light-grayish-blue-1: hsl(211, 68%, 94%);
+  --light-grayish-blue-2: hsl(205, 33%, 90%);
+  --grayish-blue: hsl(219, 14%, 63%);
+  --dark-grayish-blue: hsl(219, 12%, 42%);
+  --very-dark-blue: hsl(224, 21%, 14%);
+
+  --transition: all 0.7s ease;
+}
+
+body {
+  background-color: var(--white);
+  padding: 1.5em 1em;
+}
+
+p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--dark-grayish-blue);
+  line-height: 1.5em;
+}
+
+h1 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--very-dark-blue);
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+}
+.title-wrapper {
+  display: flex;
+}
+header p {
+  justify-self: flex-end;
+  text-align: right;
+  transition: var(--transition);
+}
+.notification-num {
+  background-color: var(--blue);
+  color: var(--white);
+  font-size: 0.9rem;
+  padding: 0.2em 0.7em;
+  border-radius: 0.3em;
+  margin-left: 0.5em;
+}
+
+article {
+  display: flex;
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-bottom: 0.6em;
+}
+.active {
+  background-color: var(--very-light-grayish-blue);
+}
+article .avatar {
+  width: 3em;
+  height: 3em;
+  margin-right: 1em;
+}
+.name {
+  color: var(--very-dark-blue);
+  font-weight: 800;
+  transition: var(--transition);
+}
+.post-link {
+  font-weight: 800;
+  color: var(--dark-grayish-blue);
+  transition: var(--transition);
+}
+.dot {
+  font-size: 1em;
+  color: var(--red);
+  margin-left: 0.2em;
+}
+.time {
+  display: block;
+  color: var(--grayish-blue);
+}
+.club-link {
+  font-weight: 800;
+  color: var(--blue);
+}
+.message {
+  padding: 1em;
+  border: 1px solid var(--light-grayish-blue-2);
+  border-radius: 0.3em;
+  margin-top: 0.8em;
+  transition: var(--transition);
+}
+.post-img {
+  width: 3.5em;
+  height: 3.5em;
+  margin-left: 1em;
+  justify-self: flex-end;
+  transition: var(--transition);
+}
+.img-comment p {
+  width: calc(100% - 56px - 48px);
+}
+
+header p:hover,
+.name:hover,
+.post-link:hover,
+.club-link:hover {
+  cursor: pointer;
+  color: var(--blue);
+}
+.message:hover {
+  cursor: pointer;
+  background-color: var(--light-grayish-blue-1);
+}
+.post-img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 1.2em;
+  }
+  .notification-num {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    min-height: 100vh;
+    background-color: var(--very-light-grayish-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body {
+    width: 38em;
+    padding: 2.5em 2em 0 2em;
+    border-radius: 1em;
+    margin: 5em 0;
+  }
+}
+
+  </style>
+  <body>
+    <header>
+      <div class="title-wrapper">
+        <h1>Notifications</h1>
+        <div class="notification-num">3</div>
+      </div>
+      <p>Mark all as read</p>
+    </header>
+    <main>
+      <article class="active" id="notification-1">
+        <img class="avatar" src="assets/images/avatar-mark-webber.webp" alt="avatar-mark-webber" />
+        <p>
+          <span class="name">Mark Webber</span> reacted to your recent post <span class="post-link"> My first tournament today!</span><span class="dot">â</span>
+          <span class="time">1m ago</span>
+        </p>
+      </article>
+      <article class="active" id="notification-2">
+        <img class="avatar" src="assets/images/avatar-angela-gray.webp" alt="avatar-angela-gray" />
+        <p>
+          <span class="name">Angela Gray</span> followed you<span class="dot">â</span>
+          <span class="time">5m ago</span>
+        </p>
+      </article>
+      <article class="active" id="notification-3">
+        <img class="avatar" src="assets/images/avatar-jacob-thompson.webp" alt="avatar-jacob-thompson" />
+        <p>
+          <span class="name">Jacob Thompson</span> has joined your group <span class="club-link">Chess Club</span><span class="dot">â</span>
+          <span class="time">1 day ago</span>
+        </p>
+      </article>
+      <article id="notification-4">
+        <img class="avatar" src="assets/images/avatar-rizky-hasanuddin.webp" alt="avatar-rizky-hasanuddin" />
+        <div>
+          <p>
+            <span class="name">Rizky Hasanuddin</span> sent you a private message
+            <span class="time">5 days ago</span>
+          </p>
+          <p class="message">
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.
+          </p>
+        </div>
+      </article>
+      <article class="img-comment" id="notification-5">
+        <img class="avatar" src="assets/images/avatar-kimberly-smith.webp" alt="avatar-kimberly-smith" />
+        <p>
+          <span class="name">Kimberly Smith</span> commented on your picture
+          <span class="time">1 week ago</span>
+        </p>
+        <img class="post-img" src="assets/images/image-chess.webp" alt="" />
+      </article>
+      <article id="notification-6">
+        <img class="avatar" src="assets/images/avatar-nathan-peterson.webp" alt="avatar-nathan-peterson" />
+        <p>
+          <span class="name">Nathan Peterson</span> reacted to your recent post <span class="post-link">5 end-game strategies to increase your win rate</span>
+          <span class="time">2 weeks ago</span>
+        </p>
+      </article>
+      <article id="notification-7">
+        <img class="avatar" src="assets/images/avatar-anna-kim.webp" alt="avatar-anna-kim" />
+        <p>
+          <span class="name">Anna Kim</span> left the group <span class="club-link">Chess Club</span>
+          <span class="time">2 weeks ago</span>
+        </p>
+      </article>
+      <script> 
+let notifications = document.querySelectorAll('.active');
+let notificationCounter = notifications.length;
+
+document.querySelector('header p').addEventListener('click', function () {
+  notificationCounter = 0;
+  document.querySelector('.notification-num').innerHTML = notificationCounter;
+  notifications.forEach((article) => {
+    article.classList.remove('active');
+  });
+  let dots = document.querySelectorAll('p .dot');
+  dots.forEach((dot) => {
+    dot.style.display = 'none';
+  });
+});
+
+notifications.forEach((article) => {
+  article.addEventListener('click', function () {
+   
+    if (article.className === 'active') {
+      notificationCounter--;
+      document.querySelector('.notification-num').innerHTML = notificationCounter;
+      
+      article.classList.remove('active');
+      
+      document.querySelector(`#${article.id} .dot`).style.display = 'none';
+    }
+  });
+});
+</script>
+    </main>
+ <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Adolphus Jallah</a>.
+  </div>
+
+  </body>
+</html>
